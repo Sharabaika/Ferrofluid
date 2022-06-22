@@ -1,7 +1,14 @@
 import SolverCPP
 from SolverCPP import MeshModel
 
-a = MeshModel([1.0],[2.0])
+from scripts.MeshReader import ReadMesh
+from scripts.Plotters import MeshPlotter
 
-print(a.x)
-print(a.y)
+mesh = ReadMesh("meshes/test.facet")
+
+# print(mesh.x)
+# print(mesh.y)
+# print(type(mesh.x))
+
+plotter = MeshPlotter(mesh)
+plotter.Show()
